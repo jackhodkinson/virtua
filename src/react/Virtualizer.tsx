@@ -58,6 +58,11 @@ export interface VirtualizerHandle {
    */
   getItemOffset(index: number): number;
   /**
+   * Get item size.
+   * @param index index of item
+   */
+  getItemSize(index: number): number;
+  /**
    * Scroll to the item specified by index.
    * @param index index of item
    * @param opts options
@@ -332,6 +337,7 @@ export const Virtualizer = forwardRef<VirtualizerHandle, VirtualizerProps>(
           },
           getItemOffset: store._getItemOffset,
           scrollToIndex: scroller._scrollToIndex,
+          getItemSize: store._getItemSize,
           scrollTo: scroller._scrollTo,
           scrollBy: scroller._scrollBy,
         };
